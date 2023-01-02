@@ -22,16 +22,16 @@ import (
 )
 
 func main() {
-	cfg := auth.AuthConfig{
-		ClientID:     "<YOUR_CLIENT_ID>",
-		ClientSecret: "<YOUR_CLIENT_SECRET>",
-		ClientScope:  "<YOUR_CLIENT_SCOPE>",
-	}
+    cfg := auth.AuthConfig{
+        ClientID:     "<YOUR_CLIENT_ID>",
+        ClientSecret: "<YOUR_CLIENT_SECRET>",
+        ClientScope:  "<YOUR_CLIENT_SCOPE>",
+    }
 
-	token, err := auth.RequestAccessToken("<YOUR_AZ_TENANT_ID>", cfg)
-	if err != nil {
-		fmt.Println(err)
-	}
+    token, err := auth.RequestAccessToken("<YOUR_AZ_TENANT_ID>", cfg)
+    if err != nil {
+        fmt.Println(err)
+    }
     fmt.Println(token)
 }
 ```
