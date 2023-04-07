@@ -11,7 +11,7 @@ Reference: https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-o
 Add the module to your `go.mod`:
 
 ```
-require github.com/gamepat/azure-oauth2-token v0.1.0
+require github.com/gamepat/azure-oauth2-token v0.2.0
 ```
 
 ### Examples
