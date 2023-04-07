@@ -14,10 +14,13 @@ Add the module to your `go.mod`:
 require github.com/gamepat/azure-oauth2-token v0.1.0
 ```
 
-### Example
+### Examples
+
+Get access-token:
 
 ```go
 import (
+    "log"
     auth "github.com/gamepat/azure-oauth2-token"
 )
 
@@ -30,8 +33,31 @@ func main() {
 
     token, err := auth.RequestAccessToken("<YOUR_AZ_TENANT_ID>", cfg)
     if err != nil {
-        fmt.Println(err)
+        log.Fatalf("error: %v", err)
     }
-    fmt.Println(token)
+    log.Println(token)
+}
+```
+
+Get access-token infos:
+
+```go
+import (
+    "log"
+    auth "github.com/gamepat/azure-oauth2-token"
+)
+
+func main() {
+    cfg := auth.AuthConfig{
+        ClientID:     "<YOUR_CLIENT_ID>",
+        ClientSecret: "<YOUR_CLIENT_SECRET>",
+        ClientScope:  "<YOUR_CLIENT_SCOPE>",
+    }
+
+    tokenInfo, err := auth.RequestAccessTokenInfo("<YOUR_AZ_TENANT_ID>", cfg)
+    if err != nil {
+        log.Fatalf("error: %v", err)
+    }
+    log.Println(tokenInfo)
 }
 ```
